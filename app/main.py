@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.params import Depends
-from pydantic import BaseModel
 from .schemes.schemes import *
 
 app = FastAPI()
