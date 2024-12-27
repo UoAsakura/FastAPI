@@ -26,7 +26,8 @@ class HotelSeerchArgs:
         self.stars = stars
 
 
-class SBooking(BaseModel):
-    room_id: int
-    date_from: date
-    date_to: date
+
+# class SBooking(BaseModel):
+#     room_id: int
+#     date_from: date
+#     date_to: date
