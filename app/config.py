@@ -7,6 +7,8 @@ class Settings(BaseSettings):
     DB_USER: str
     DB_PASS: str
     DB_NAME: str
+    SEKRET_KEY: str
+    ALOGORITHM: str
 
     def get_database_url(cls):
         DB_URL = f"postgresql+asyncpg://{cls.DB_USER}:{cls.DB_PASS}@{cls.DB_HOST}:{cls.DB_PORT}/{cls.DB_NAME}"
@@ -16,6 +18,13 @@ class Settings(BaseSettings):
 
     def get_settings(self):
         return Settings()
+
+    def get_auth_key(cls):
+        return cls.SEKRET_KEY
+
+    def get_auth_algorithm(cls):
+        return cls.ALOGORITHM
+
 
     model_config = SettingsConfigDict(env_file=".env")
 

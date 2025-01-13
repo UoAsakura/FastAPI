@@ -2,10 +2,11 @@ from fastapi import FastAPI
 from fastapi.params import Depends
 from .schemes.schemes import *
 from app.booking.router import router as router_booings
-
+from app.users.router import router as router_users
 # Зпуск приложения
 app = FastAPI()
-
+# Подключение роутера users
+app.include_router(router_users)
 # Подключение роутера bookings
 app.include_router(router_booings)
 

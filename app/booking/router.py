@@ -10,5 +10,7 @@ router = APIRouter(
 
 
 @router.get("")
-async def get_bookings() -> list[SBooking]:
-    return await BookingDAO.find_all()
+async def get_bookings():
+    response = BookingDAO.find_all()
+    print(type(response))
+    return await response
